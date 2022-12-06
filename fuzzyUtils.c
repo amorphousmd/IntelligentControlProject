@@ -33,6 +33,25 @@ double* hlt_hinhthang(float* x, int div, int L, int C1, int C2, int R)
     return y;
 }
 
+double* OR_Max(double* muyA, double* muyB, int div)
+{
+    double *y = calloc(div + 1, sizeof(double));
+
+    for (int i = 0; i <= div; i++)
+    {
+        if (muyA[i] >= muyB[i])
+        {
+            y[i] = muyA[i];
+        }
+        else
+        {
+            y[i] = muyB[i];
+        }
+    }
+    return y;
+}
+
+
 double* And_PROD(double* muyA, double* muyB, int div)
 {
     double *y = calloc(div + 1, sizeof(double));
@@ -72,10 +91,10 @@ int main()
     //     printf("%d. %lf\n",i, muyB[i]);
     // }
     double* muyC = And_PROD(muyA, muyB, div);
-    for (int i = 0; i <= div; i++)
-    {
-        printf("%d. %lf\n",i, muyC[i]);
-    }
+    // for (int i = 0; i <= div; i++)
+    // {
+    //     printf("%d. %lf\n",i, muyC[i]);
+    // }
 
     printf("Hello World");
     return 0;
